@@ -27,3 +27,8 @@ function stopPlayButton() {
 	// $('#iat_result_container').css('display', 'none');
 	shouldPlay = false;
 }
+
+function addQuote(str) {
+	var newStr = "「" + str + "」";
+	return newStr;
+}

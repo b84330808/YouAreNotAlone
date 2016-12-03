@@ -23,6 +23,12 @@ body {
     width: 100%;
 }
 
+#subtitle {
+	color: #525252;
+	font-size: 25px;
+	margin-bottom: 15px;
+}
+
 #nav-text {
     width: 100%;
     text-align: center;

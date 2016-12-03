@@ -67,7 +67,7 @@ var iflytek = (function(document){
                     if (result == '' || result == null)
                         iat_result.innerHTML = "可以稍微大聲一點～";
                     else
-                        iat_result.innerHTML = Traditionalized(result);
+                        iat_result.innerHTML = addQuote(Traditionalized(result));
                     /* 若回调的err不为空且错误码不为0，则会话失败，可提取错误码 */
                 } else {
                     iat_result.innerHTML = 'error code : ' + err + ", error description : " + result;
