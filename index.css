@@ -1,3 +1,36 @@
-html,body{
-	background-color: #ccc;
+html,
+body {
+    background-color: #ffffff;
+}
+
+.navbar-custom {
+    background-color: green;
+}
+
+#nav-text {
+    width: 100%;
+    text-align: center;
+    widows: 100%;
+    padding: 10px;
+    left: 0;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+}
+
+#button-wrapper {
+    width: 100%;
+    height: 30%;
+    bottom: 0px;
+    text-align: center;
+    position: absolute;
+}
+
+#wanna-speak {
+	display: inline-block;
+}
+
+#wanna-listen {
+	display: inline-block;
+	margin-top: 20px;
 }
