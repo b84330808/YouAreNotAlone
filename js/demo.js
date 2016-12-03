@@ -5,6 +5,7 @@
 var iflytek = (function(document){
     var iat_result = document.getElementById('iat_result');
     var tip = document.getElementById('a');
+    var recordButton = document.getElementById('record_btn');
     var volumeTip = document.getElementById('volume');
     volumeTip.width = parseFloat(window.getComputedStyle(tip, null).width) -100;
     var volumeWrapper = document.getElementById('canvas_wrapper');
@@ -64,7 +65,7 @@ var iflytek = (function(document){
                 /* 若回调的err为空或错误码为0，则会话成功，可提取识别结果进行显示*/
                 if (err == null || err == undefined || err == 0) {
                     if (result == '' || result == null)
-                        iat_result.innerHTML = "没有获取到识别结果";
+                        iat_result.innerHTML = "可以稍微大聲一點～";
                     else
                         iat_result.innerHTML = result;
                     /* 若回调的err不为空且错误码不为0，则会话失败，可提取错误码 */
@@ -73,6 +74,7 @@ var iflytek = (function(document){
                 }
                 mic_pressed = false;
                 volumeEvent.stop();
+                stopPlayButton();
             },
             "onVolume": function (volume) {
                 volumeEvent.listen(volume);
@@ -80,24 +82,27 @@ var iflytek = (function(document){
             "onError":function(){
                 mic_pressed = false;
                 volumeEvent.stop();
+                stopPlayButton(); 
             },
             "onProcess":function(status){
                 switch (status){
                     case 'onStart':
-                        tip.innerHTML = "服务初始化...";
+                        tip.innerHTML = "初始化...";
                         break;
                     case 'normalVolume':
                     case 'started':
-                        tip.innerHTML = "倾听中...";
+                        tip.innerHTML = "傾聽中...";
                         break;
                     case 'onStop':
                         tip.innerHTML = "等待结果...";
+                        stopPlayButton();
                         break;
                     case 'onEnd':
                         tip.innerHTML = oldText;
+                        stopPlayButton();
                         break;
                     case 'lowVolume':
-                        tip.innerHTML = "倾听中...(声音过小)";
+                        tip.innerHTML = "傾聽中...(聲音過小)";
                         break;
                     default:
                         tip.innerHTML = status;
@@ -137,6 +142,9 @@ var iflytek = (function(document){
     }
 
     tip.addEventListener("click",function(){
+        play();
+    });
+    recordButton.addEventListener('click', function() {
         play();
     });
     //页面不可见，断开麦克风调用

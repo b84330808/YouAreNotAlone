@@ -14,17 +14,18 @@
 
 <body>
     <nav class="navbar navbar-custom">
-        <div id="nav-text">YOU ARE NOT ALONE</div>
+        <div id="nav-text">You Are Not Alone</div>
     </nav>
-    <div class="clear"></div>
-    <h2 id='iat_result'>语音听写</h2>
-    <div style="position:relative">
-        <div id='a'>点击开始录音</div>
-        <div id="canvas_wrapper" style="display:none">
-            <div style="display: inline">&spades;</div>
-            <canvas id="volume" height="4"></canvas>
-        </div>
-    </div>
+    <!-- IAT result -->
+    <!-- <div class="clear"></div> -->
+		<div id="iat_result_container">
+			<h2 id='iat_result'>傾聽中...</h2>
+		</div>
+
+    <!-- Image Container -->
+		<div id="image_container">
+			<img src="design/image/recording_lock.png" alt="">
+		</div>
     <!-- Situation 1 -->
     <div id="button-wrapper">
         <div>
@@ -43,14 +44,18 @@
     	<div id="subtitle">
     		有些事情，是該被抒發出來
     	</div>
-    	<a href="record_btn">
-    		<img src="design/image/recording_start.png" alt="">
+    	<a id="record_btn">
+    		<img src="design/image/recording_start.png" alt="" id="record_btn_image">
     	</a>
-    	<div id="btn_text">
-    		開始錄音
-    	</div>
+    	<div style="position:relative">
+        <div id='a'>點擊開始傾聽</div>
+        <div id="canvas_wrapper" style="display:none">
+            <div style="display: inline">&spades;</div>
+            <canvas id="volume" height="4"></canvas>
+        </div>
     </div>
-    <script src="index.js"></script>
+    </div>
+    <script src="./js/index.js"></script>
     <script type="text/javascript" src='./js/fingerprint2.min.js'></script>
     <script type="text/javascript" src="./js/iat.all.js"></script>
     <script type="text/javascript" src="./js/demo.js"></script>
