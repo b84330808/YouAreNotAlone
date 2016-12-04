@@ -1,3 +1,3 @@
 doc link: http://www.xfyun.cn/index.php/services/ltp?tab_index=2
 api key: 0154t8M027s672D9P8T0ezplyoRMdq7ruFll2U4V
-exp: curl -i "http://ltpapi.voicecloud.cn/analysis/?api_key=0154t8M027s672D9P8T0ezplyoRMdq7ruFll2U4V&text=身体若有不适，请先向专业医师求诊&pattern=dp&format=json"
+exp: curl -i "http://ltpapi.voicecloud.cn/analysis/?api_key=0154t8M027s672D9P8T0ezplyoRMdq7ruFll2U4V&text=身体若有不适，请先向专业医师求诊&pattern=ner&format=json&only_ner=true"
