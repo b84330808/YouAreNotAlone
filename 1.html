@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style type="text/css">
+        #wanna-speak,#wanna-listen{
+            background-color: #7fb1e4;
+            color: white;
+            width: 200px;
+            height: 40px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.14);
+        }
+
+    </style>
 </head>
 
 <body>
@@ -24,10 +34,10 @@
 
     <!-- Image Container -->
 		<div id="image_container">
-			<img src="design/image/recording_lock.png" id="big-img">
+			<img src="design/image/main_heart.png" id="big-img">
 		</div>
     <!-- Situation 1 -->
-    <div id="button-wrapper">
+    <div id="button-wrapper" style="display: block;">
         <div>
             <button class="btn btn-default" id="wanna-speak">
                 我有話想說
@@ -40,29 +50,17 @@
         </div>
     </div>
     <!-- Situation 2 -->
-    <div id="button-wrapper-record">
-    	<div id="subtitle">
-    		有些事情
-    		<br>
-    		是該被抒發出來
-    	</div>
-    	<a id="record_btn">
-    		<img src="design/image/recording_start.png" alt="" id="record_btn_image">
-    	</a>
-    	<div style="position:relative">
-        <div id='a'>點擊開始傾聽</div>
-        <div id="canvas_wrapper" style="display:none">
-            <div style="display: inline">&spades;</div>
-            <canvas id="volume" height="4"></canvas>
-        </div>
-    </div>
-    </div>
+
     <script type="text/javascript" src="./js/tw_cn.js"></script>
-    <script type="text/javascript" src="./js/mining.js"></script>
     <script src="./js/index.js"></script>
     <script type="text/javascript" src='./js/fingerprint2.min.js'></script>
     <script type="text/javascript" src="./js/iat.all.js"></script>
     <script type="text/javascript" src="./js/demo.js"></script>
+    <script >
+        $('#wanna-speak').click(function(){
+            window.location = "index.html";
+        })
+    </script>
 </body>
 
 </html>

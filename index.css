@@ -37,6 +37,11 @@ body {
     animation-duration: 1s;
 }
 
+#button-wrapper{
+        animation-name: move2;
+    animation-duration: 1s;
+}
+
 
 
 
@@ -85,7 +90,7 @@ body {
 #button-wrapper {
     width: 100%;
     height: 30%;
-    bottom: 0px;
+    bottom: 16px;
     text-align: center;
     position: absolute;
     display: none;

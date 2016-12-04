@@ -64,10 +64,16 @@ var iflytek = (function(document){
             "onResult": function (err, result) {
                 /* 若回调的err为空或错误码为0，则会话成功，可提取识别结果进行显示*/
                 if (err == null || err == undefined || err == 0) {
-                    if (result == '' || result == null)
+                    if (result == '' || result == null) {
                         iat_result.innerHTML = "可以稍微大聲一點～";
-                    else
+                    }
+                    else {
+                        getHyphenation(result, function(words) {
+                            console.log(JSON.stringify(words));
+                        });
+
                         iat_result.innerHTML = addQuote(Traditionalized(result));
+                    }
                     /* 若回调的err不为空且错误码不为0，则会话失败，可提取错误码 */
                 } else {
                     iat_result.innerHTML = 'error code : ' + err + ", error description : " + result;
