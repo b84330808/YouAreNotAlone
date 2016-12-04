@@ -40,7 +40,7 @@ function stopPlayButton() {
         $("#record_btn_image").attr('src', "design/image/result_play.png");
         $("#subtitle").html('我們想讓你知道，\n你不是獨自在面對這一切')
         $("#a").css('display', 'none');
-    }, 3000)
+    }, 4000)
 
 }
 
